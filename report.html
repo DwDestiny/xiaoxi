@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>院校库与智能定校：产研 + 业务 协同赋能</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            box-sizing: border-box; /* Ensure padding is included in width/height */
+        }
+        .slide.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .nav-zone {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            z-index: 10;
+            cursor: pointer;
+        }
+        #prev-zone { left: 0; }
+        #next-zone { right: 0; }
+        .arrow-indicator {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .nav-zone:hover .arrow-indicator {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen overflow-hidden">
+
+    <!-- Presentation Container -->
+    <div id="presentation" class="relative w-full h-full max-w-6xl max-h-[650px] bg-white rounded-2xl shadow-2xl overflow-hidden">
+
+        <!-- Slide 1: Title Page -->
+        <div class="slide active flex-col items-center justify-center h-full p-12 text-center bg-gradient-to-br from-blue-50 to-indigo-100">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 tracking-tight">院校库与智能定校</h1>
+            <p class="mt-6 text-3xl text-blue-600 font-semibold">产研 + 业务 协同赋能</p>
+        </div>
+
+        <!-- Slide 2: Two Pillars (Redesigned) -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">定校准确率的两大基石</h2>
+            <p class="text-xl text-gray-500 mb-12">智能定校的效果，取决于我们最薄弱的一环</p>
+            <div class="w-full max-w-4xl flex flex-col items-center">
+                <!-- Top Goal -->
+                <div class="bg-blue-600 text-white font-bold text-2xl py-4 px-8 rounded-lg shadow-lg z-10">
+                    精准定校
+                </div>
+                <!-- Connecting Lines -->
+                <div class="w-px h-12 bg-gray-300"></div>
+                <!-- Pillars -->
+                <div class="w-full grid md:grid-cols-2 gap-8 relative">
+                    <div class="absolute top-1/2 left-0 w-full h-2 bg-gray-300 rounded-full -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 left-1/2 w-12 h-12 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-3xl text-gray-400">&</div>
+
+                    <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200 text-center">
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-16 h-16 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">院校数据</h3>
+                        <p class="text-gray-600 mt-2">全面 / 准确 / 及时</p>
+                    </div>
+
+                    <div class="bg-indigo-50 p-8 rounded-lg border-2 border-indigo-200 text-center">
+                         <div class="flex justify-center mb-4">
+                            <svg class="w-16 h-16 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">推荐逻辑</h3>
+                        <p class="text-gray-600 mt-2">精准 / 覆盖 / 灵活</p>
+                    </div>
+                </div>
+                 <p class="mt-8 text-center text-red-600 font-semibold">任何一块短板，都会拉低定校效果的下限</p>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Challenges -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-10">现状分析：我们共同面临的挑战</h2>
+            <div class="w-full max-w-4xl grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-4">院校数据之痛</h3>
+                    <p class="text-lg text-gray-600 mb-6">“智能爬取 + 人工校对”模式，耗费了业务老师大量精力，且难以保证数据的100%及时有效。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full font-semibold">大量人工</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full font-semibold">效率瓶颈</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full font-semibold">时效滞后</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-4">推荐逻辑之痛</h3>
+                    <p class="text-lg text-gray-600 mb-6">核心场景（本申硕）判断逻辑尚可，但对复杂背景及特殊情况，缺乏智能推荐路径。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-semibold">场景单一</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-semibold">维度缺失</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-semibold">路径有限</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Data Evolution -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-2">第一战线：院校数据</h2>
+            <p class="text-xl text-gray-500 mb-10">从人工到智能的进化，解放人力，聚焦高价值信息</p>
+            <div class="w-full max-w-4xl space-y-8">
+                <!-- Current Process -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-500 mb-3">现状 (Current)</h3>
+                    <div class="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+                        <div class="text-center">智能爬取</div> <span class="text-gray-400 font-bold">→</span>
+                        <div class="text-center font-bold text-red-600">人工校对</div> <span class="text-gray-400 font-bold">→</span>
+                        <div class="text-center font-bold text-red-600">人工整理</div> <span class="text-gray-400 font-bold">→</span>
+                        <div class="text-center">手动入库</div>
+                    </div>
+                </div>
+                 <!-- Target Process -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">目标 (Target)</h3>
+                    <div class="flex items-center justify-between bg-green-50 p-4 rounded-lg border-2 border-green-500">
+                        <div class="text-center">智能爬取</div> <span class="text-green-500 font-bold">→</span>
+                        <div class="text-center font-bold text-green-700">AI校对</div> <span class="text-green-500 font-bold">→</span>
+                        <div class="text-center font-bold text-green-700">自动清洗</div> <span class="text-green-500 font-bold">→</span>
+                        <div class="text-center">自动入库</div> <span class="text-green-500 font-bold">→</span>
+                        <div class="text-center font-bold text-green-700">人工抽查</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Data Action Plan -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+             <h2 class="text-4xl font-bold text-gray-800 mb-10">行动计划：数据战线协同流程</h2>
+             <div class="w-full max-w-4xl grid md:grid-cols-2 gap-10">
+                <!-- Left: Roles -->
+                <div class="space-y-4">
+                     <h3 class="text-2xl font-bold text-gray-700 border-b-2 pb-2">人员配置与分工</h3>
+                     <div class="p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-blue-800">产品 (1位)</p>
+                        <p class="text-blue-700">负责方案调研、设计与项目推进。</p>
+                     </div>
+                      <div class="p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-blue-800">爬虫开发 (1位)</p>
+                        <p class="text-blue-700">持续优化爬虫，稳定交付原始数据。</p>
+                     </div>
+                      <div class="p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-blue-800">院校数据老师 (4位)</p>
+                        <p class="text-blue-700">初期核对、收集问题，逐步转变为抽查与高价值信息贡献者。</p>
+                     </div>
+                </div>
+                <!-- Right: Workflow -->
+                 <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-gray-700 border-b-2 pb-2">协同流程</h3>
+                    <div class="relative text-center space-y-3">
+                        <div class="p-3 bg-gray-100 rounded-lg">1. 数据交付</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-gray-100 rounded-lg">2. 核对与反馈</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-gray-100 rounded-lg">3. 方案推进</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-green-500 text-white font-bold rounded-lg shadow-md">4. 每周复盘</div>
+                        <div class="absolute left-1/2 top-0 h-full -z-10 -ml-3">
+                            <svg width="24" height="100%" viewBox="0 0 24 300" class="text-gray-300">
+                                <path d="M 12 0 V 270 A 30 30 0 0 0 -18 300" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 4"/>
+                                <path d="M -18 300 H -50" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 4"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        
+        <!-- Slide 6: Logic Expansion -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-2">第二战线：推荐逻辑</h2>
+            <p class="text-xl text-gray-500 mb-10">提升精准度，拓展申请可能性</p>
+            <div class="w-full max-w-4xl grid md:grid-cols-2 gap-8">
+                <!-- Current Logic -->
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-gray-500 mb-4">现状 (Current)</h3>
+                    <ul class="space-y-3 list-disc list-inside text-gray-600">
+                        <li><strong>覆盖场景：</strong>高中申本、本科申硕</li>
+                        <li><strong>判断维度：</strong>侧重分数和专业方向</li>
+                        <li class="font-semibold text-red-600"><strong>短板：</strong>工作背景判断不足</li>
+                        <li class="font-semibold text-red-600"><strong>短板：</strong>对成绩不达标者无有效路径</li>
+                    </ul>
+                </div>
+                <!-- Target Logic -->
+                <div class="bg-green-50 p-6 rounded-lg border-2 border-green-500">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-4">目标 (Target)</h3>
+                     <ul class="space-y-3 list-disc list-inside text-green-800">
+                        <li><strong>逻辑深化：</strong>融入<strong class="underline">工作背景</strong>的判断逻辑</li>
+                        <li><strong>路径拓展：</strong>智能推荐匹配的<strong class="underline">硕士预科</strong></li>
+                        <li><strong>路径拓展：</strong>智能推荐匹配的<strong class="underline">语言班</strong>课程</li>
+                        <li class="font-semibold">为学生点亮通往名校的希望</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Logic Action Plan -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+             <h2 class="text-4xl font-bold text-gray-800 mb-10">行动计划：逻辑战线协同流程</h2>
+             <div class="w-full max-w-4xl grid md:grid-cols-2 gap-10">
+                <!-- Left: Plans -->
+                <div class="space-y-4">
+                     <h3 class="text-2xl font-bold text-gray-700 border-b-2 pb-2">下一步计划</h3>
+                     <div class="p-4 bg-indigo-50 rounded-lg">
+                        <p class="font-bold text-indigo-800">Plan A (提升准确率)</p>
+                        <p class="text-indigo-700">完善“本申硕”场景，添加工作背景判断逻辑。</p>
+                     </div>
+                      <div class="p-4 bg-indigo-50 rounded-lg">
+                        <p class="font-bold text-indigo-800">Plan B (拓展新路径)</p>
+                        <p class="text-indigo-700">添加“硕预/语言班”的推荐逻辑与院校库。</p>
+                     </div>
+                     <h3 class="text-2xl font-bold text-gray-700 border-b-2 pb-2 mt-6">人员配置</h3>
+                     <div class="p-4 bg-indigo-50 rounded-lg">
+                        <p class="font-bold text-indigo-800">产品 + 推荐逻辑业务老师</p>
+                     </div>
+                </div>
+                <!-- Right: Workflow -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-gray-700 border-b-2 pb-2">协同流程</h3>
+                    <div class="relative text-center space-y-3">
+                        <div class="p-3 bg-gray-100 rounded-lg">1. 跟踪方案 & 汇总问题</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-gray-100 rounded-lg">2. 讨论规则 & 明确需求</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-gray-100 rounded-lg">3. 制定计划 & 交付研发</div>
+                        <div class="text-2xl text-gray-400">↓</div>
+                        <div class="p-3 bg-green-500 text-white font-bold rounded-lg shadow-md">4. 验证效果 & 开启新循环</div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        
+        <!-- Slide 8: Synergy Value -->
+        <div class="slide flex-col items-center justify-center h-full p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-10">协同赋能：我们的共同价值</h2>
+            <div class="w-full max-w-4xl grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">对业务团队的价值</h3>
+                    <ul class="space-y-3 list-disc list-inside text-blue-700">
+                        <li><strong>提效：</strong>从重复、低效的工作中解放</li>
+                        <li><strong>提能：</strong>提供更精准、更多元的推荐武器</li>
+                        <li><strong>提升专业度：</strong>用数据和清晰路径赢得客户信任</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">对公司的价值</h3>
+                    <ul class="space-y-3 list-disc list-inside text-green-700">
+                        <li><strong>提升核心竞争力：</strong>打造业界领先的数据与逻辑壁垒</li>
+                        <li><strong>提升人效与转化率：</strong>用技术驱动业务增长</li>
+                        <li><strong>实现可持续发展：</strong>构建良性反馈与迭代循环</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Summary -->
+        <div class="slide flex-col items-center justify-center h-full p-12 text-center bg-gray-800 text-white">
+            <h2 class="text-4xl font-bold mb-10">小步快跑，持续迭代</h2>
+            <div class="space-y-4 text-2xl">
+                <p>院校数据：<span class="text-yellow-400">逐步实现自动化，聚焦高价值信息</span></p>
+                <p>推荐逻辑：<span class="text-yellow-400">持续优化精准度，拓展服务路径</span></p>
+            </div>
+            <div class="mt-12 bg-white text-gray-800 font-bold text-3xl py-3 px-8 rounded-lg shadow-lg">
+                每周复盘，小步快跑，持续迭代
+            </div>
+            <p class="mt-12 text-2xl">让我们共同努力，打造业界最精准、最智能的定校系统！</p>
+        </div>
+
+        <!-- Slide 10: End Page (New) -->
+        <div class="slide flex-col items-center justify-center h-full p-12 text-center bg-gradient-to-br from-blue-50 to-indigo-100">
+            <h2 class="text-5xl font-bold text-gray-800">感谢观看</h2>
+            <p class="mt-4 text-xl text-gray-500">Thanks for your attention</p>
+        </div>
+
+        <!-- Navigation Zones -->
+        <div id="prev-zone" class="nav-zone">
+             <div class="arrow-indicator left-4">&lt;</div>
+        </div>
+        <div id="next-zone" class="nav-zone">
+             <div class="arrow-indicator right-4">&gt;</div>
+        </div>
+
+    </div>
+
+    <!-- Slide Counter -->
+    <div id="counter" class="absolute bottom-4 right-8 text-gray-500 bg-white/50 px-3 py-1 rounded-full text-sm font-medium">1 / 10</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const prevZone = document.getElementById('prev-zone');
+            const nextZone = document.getElementById('next-zone');
+            const counter = document.getElementById('counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                // Handle wrap-around
+                if (index >= totalSlides) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = totalSlides - 1;
+                } else {
+                    currentSlide = index;
+                }
+                
+                // Update slides visibility
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === currentSlide);
+                });
+
+                // Update counter
+                counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            }
+
+            // Click navigation
+            nextZone.addEventListener('click', () => showSlide(currentSlide + 1));
+            prevZone.addEventListener('click', () => showSlide(currentSlide - 1));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                    e.preventDefault(); // Prevent space bar from scrolling
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                    e.preventDefault();
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            // Initial setup
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
